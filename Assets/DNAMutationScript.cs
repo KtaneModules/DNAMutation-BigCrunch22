@@ -80,7 +80,7 @@ public class DNAMutationScript : MonoBehaviour
 				default:
 					break;
 			}
-			Log4 += Focus[x].ToString();
+			Log4 += (Focus[x] + 1).ToString();
 		}
 		
 		string[] TheColors = {"Red", "Yellow", "Green", "Blue"};
@@ -92,7 +92,7 @@ public class DNAMutationScript : MonoBehaviour
 			StrandColors[x] = UnityEngine.Random.Range(0,4);
 			Strands[x].GetComponent<MeshRenderer>().material = DarkerMaterials[StrandColors[x]];
 			TopDisplay.text += x != 8 ? "<color=" + Colors[Color[x]] + ">" + Letters[Chemical[x]] + "</color> " : "<color=" + Colors[Color[x]] + ">" + Letters[Chemical[x]] + "</color>";
-			RepresentingLetters[x] = Mutation[Chemical[x]][Color[x]][Focus[x]].ToString();
+			RepresentingLetters[x] = Mutation[Color[x]][Chemical[x]][Focus[x]].ToString();
 			Log1 += Letters[Chemical[x]];
 			Log2 += x != 8 ? TheColors[Color[x]] + ", " : TheColors[Color[x]];
 			Log3 += x != 8 ? DarkerMaterials[StrandColors[x]].name + ", " : DarkerMaterials[StrandColors[x]].name;
