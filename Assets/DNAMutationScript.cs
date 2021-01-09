@@ -342,7 +342,7 @@ public class DNAMutationScript : MonoBehaviour
 				yield break;
 			}
 			
-			if (!CommandCharacters.All(c => parameters[1].ToUpper().Contains(c)))
+			if (!parameters[1].ToUpper().ToCharArray().All(c => CommandCharacters.Contains(c)))
 			{
 				yield return "sendtochaterror Sequence contain an invalid character. The command was not processed.";
 				yield break;
