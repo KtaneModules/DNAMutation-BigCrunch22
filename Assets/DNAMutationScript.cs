@@ -350,7 +350,7 @@ public class DNAMutationScript : MonoBehaviour
 			
 			for (int x = 0; x < parameters[1].Length; x++)
 			{
-				Buttons[Array.IndexOf(CommandLetters, parameters[1][x].ToString())].OnInteract();
+				Buttons[Array.IndexOf(CommandLetters, parameters[1][x].ToString().ToUpper())].OnInteract();
 				yield return new WaitForSecondsRealtime(.1f);
 			}
 		}
